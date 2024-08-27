@@ -18,15 +18,17 @@ int main(int argc, char *argv[]) {
     add(1, s1);
     add(2, s1);
     add(3, s1);
-//    printf("s1: ");
-//    display(s1);
+    printf("s1: ");
+    display(s1);
+    printf("\n");
 
     // Add elements to s2
     add(2, s2);
     add(3, s2);
     add(4, s2);
-//    printf("s2: ");
-//    display(s2);
+    printf("s2: ");
+    display(s2);
+	printf("\n");
 
     // Union of s1 and s2
     getUnion(result, s1, s2);
@@ -40,11 +42,11 @@ int main(int argc, char *argv[]) {
 
     // Difference between s1 and s2 (s1 - s2)
     difference(result, s1, s2);
-    printf("Difference (s1 - s2): ");
+    printf("\nDifference (s1 - s2): ");
     display(result);
 
     // Check if s1 is empty
-    printf("Is s1 empty? %s\n", isEmpty(s1) ? "Yes" : "No");
+    printf("\nIs s1 empty? %s\n", isEmpty(s1) ? "Yes" : "No");
 
     // Check if s1 contains 3
     printf("Does s1 contain 3? %s\n", contains(s1, 3) ? "Yes" : "No");

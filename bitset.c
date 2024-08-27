@@ -25,13 +25,24 @@ void add(int elem, BitSet s){
 
 
 
+//void display(BitSet s){
+//	int i;
+//	for(i=0; i<MAX; i++){
+//		printf("[%d] ", s[i]);
+//	}
+//	
+//}
+
 void display(BitSet s){
-	int i;
-	for(i=0; i<MAX; i++){
-		printf("[%d] ", s[i]);
-	}
-	
+    int i;
+    for(i = 0; i < MAX; i++){
+        if(s[i] == 1) {
+            printf("[%d] ", i);
+        }
+    }
+    printf("\n");
 }
+
 
 
 void getUnion(BitSet result, BitSet s1, BitSet s2) {
