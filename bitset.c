@@ -23,7 +23,16 @@ void add(int elem, BitSet s){
     }
 }
 
-
+void display(BitSet s) {
+    int i;
+    for (i = 0; i < MAX; i++) {
+        if (s[i] == 1) {
+            printf("\033[0;32m[%d] \033[0m", s[i]); 
+        } else {
+            printf("[%d] ", s[i]); 
+        }
+    }
+}
 
 //void display(BitSet s){
 //	int i;
@@ -33,15 +42,15 @@ void add(int elem, BitSet s){
 //	
 //}
 
-void display(BitSet s){
-    int i;
-    for(i = 0; i < MAX; i++){
-        if(s[i] == 1) {
-            printf("[%d] ", i);
-        }
-    }
-    printf("\n");
-}
+//void display(BitSet s){
+//    int i;
+//    for(i = 0; i < MAX; i++){
+//        if(s[i] == 1) {
+//            printf("[%d] ", i);
+//        }
+//    }
+//    printf("\n");
+//}
 
 
 
@@ -70,14 +79,14 @@ void difference(BitSet result, BitSet s1, BitSet s2) {
 
 
 int isEmpty(BitSet s) {
-	int i, result = 1; //1 empty
+	int i, result = 1; 
     for (i = 0; i < MAX; i++) {
         if (s[i] != 0) {
-            result = 0; // Not empty
+            result = 0; 
             break;
         }
     }
-    return result; // Empty, 
+    return result; 
 }
 
 
@@ -85,7 +94,7 @@ int contains(BitSet s, int elem) {
     if (elem >= 0 && elem < MAX) {
         return s[elem];
     }
-    return 0; // false, element not in set
+    return 0; 
 }
 
 int disjoint(BitSet s1, BitSet s2) {
@@ -93,22 +102,22 @@ int disjoint(BitSet s1, BitSet s2) {
     int result = 1;
     for(i = 0; i < MAX; i++) {
         if (s1[i] && s2[i]) {
-            result = 0; // false, not disjoint
+            result = 0; 
             break;
         }
     }
-    return result; // true, disjoint
+    return result; 
 }
 
 int equal(BitSet s1, BitSet s2) {
     int i, result = 1;
     for(i = 0; i < MAX; i++) {
         if (s1[i] != s2[i]) {
-            result = 0; // false, not equal
+            result = 0; 
             break;
         }
     }
-    return result; // true, equal
+    return result;
 }
 
 int cardinality(BitSet s) {
@@ -125,9 +134,13 @@ int subset(BitSet s1, BitSet s2) {
     int i, result = 1;
     for(i = 0; i < MAX; i++) {
         if (s1[i] && !s2[i]) {
-            result = 0; // false, s1 is not a subset of s2
+            result = 0; 
             break;
         }
     }
-    return result; // true, s1 is a subset of s2
+    return result; 
 }
+
+
+
+
